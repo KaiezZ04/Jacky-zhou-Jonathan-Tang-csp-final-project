@@ -6,17 +6,18 @@
     <style>
         html,
         body {
-            margin: 0;
-            padding: 0;
-            height: 200vh;
-            overflow-x: hidden;
+            height: 100vh;
+        }
+        #layout{
+            max-width: 1500px;
+            margin:auto;
         }
         .background{
             background-image:url("background1.png");
             background-size:cover;
             background-position: 0px 0px;
             height: 200vh;
-            font: 200 40rem '';
+            font: 200 30rem '';
             -webkit-background-clip: text;
             -webkit-text-Fill-color: transparent;
             position: relative;
@@ -25,7 +26,7 @@
         }
         .background::before{
             content: '';
-            background-size:cover;
+            background-size:auto;
             background-image:url("gugong3.jpg");
             background-position: 50% 50%;
             position: absolute;
@@ -63,6 +64,7 @@
     </style>
 </head>
 <body>
+<div id="layout">
     <h1>Forbidden City</h1>
     <div class="background"><span>故宫</span></div>
     <img >
@@ -85,6 +87,7 @@
         <br>
         <br>
     </h2>
+</div>
     <script>
         const background = document.querySelector(".background")
 
