@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <title>project</title>
     <style>
-        html,
         body {
-            height: 100vh;
+            text-align: center;
+            background-size: cover;
+            background-image: url("gugong3.jpg");
         }
         
         #layout {
@@ -18,52 +19,27 @@
         .background {
             background-image: url("background1.png");
             background-size: cover;
-            background-position: 0px 0px;
-            height: 200vh;
-            background-clip: inherit;
             -webkit-background-clip: text;
             -webkit-text-Fill-color: transparent;
-            position: relative;
-            text-align: center;
             overflow: hidden;
         }
         
-        .background::before {
-            content: '';
-            background-size: auto;
-            background-image: url("gugong3.jpg");
-            background-position: 50% 50%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            z-index: -99;
-        }
-        
         h1 {
-            position: absolute;
-            text-align: center;
             width: 100%;
             letter-spacing: 10px;
             color: #fff;
         }
         
-        h3 {
-            position: absolute;
-            letter-spacing: 2px;
-            top: 100vh;
-            width: 60%;
+        p{
             color: #fff;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 30px;
+            width: 60%;
+            margin: auto;
+            font-size: 20px;
             background-color: rgba(0, 0, 0, .3);
         }
         
         .hyperlink {
-            position: absolute;
-            text-align: center;
+
             width: 93%;
             color: #fff;
         }
@@ -75,7 +51,7 @@
         <h1>Forbidden City</h1>
         <div class="background"><span>故宫</span></div>
         <img>
-        <h3 id="paragraph">The Forbidden City is the imperial palace of the two dynasties in Ming and Qing Dynasties, located in the center of Beijing's central axis. It is the cream of ancient Chinese palace architecture.
+        <p>The Forbidden City is the imperial palace of the two dynasties in Ming and Qing Dynasties, located in the center of Beijing's central axis. It is the cream of ancient Chinese palace architecture.
             <br>
             <br> The Forbidden City is centered on three main halls, covering an area of 720,000 square meters, with a construction area of about 150,000 square meters. It has more than 70 palaces and more than 9,000 houses. It is one of the largest and
             most complete ancient wooden structures in the world.
@@ -87,14 +63,14 @@
             <a href="cspfinalP2.html" class="hyperlink">Link to Tour Guide</a>
             <br>
             <br>
-        </h3>
+        </p>
     </div>
     <script>
         const background = document.querySelector(".background")
         const P = document.getElementById('paragraph')
         let width = document.body.clientWidth
         document.addEventListener('scroll', () => {
-            const scrollY = window.scrollY * 3
+            const scrollY = window.scrollY * 4
             scrollY !== 0 ? background.style.backgroundPosition = `calc(50% + ${scrollY}px)calc(50% + ${scrollY}px)` : background.style.backgroundPosition = '';
         })
         document.addEventListener('mouseover', function() {
