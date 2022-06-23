@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+
+<head>
     <meta charset="UTF-8">
     <title>project</title>
     <style>
@@ -8,26 +9,29 @@
         body {
             height: 100vh;
         }
-        #layout{
+        
+        #layout {
             max-width: 1500px;
-            margin:auto;
+            margin: auto;
         }
-        .background{
-            background-image:url("background1.png");
-            background-size:cover;
+        
+        .background {
+            background-image: url("background1.png");
+            background-size: cover;
             background-position: 0px 0px;
             height: 200vh;
-            font: 200 30rem '';
+            background-clip: inherit;
             -webkit-background-clip: text;
             -webkit-text-Fill-color: transparent;
             position: relative;
             text-align: center;
             overflow: hidden;
         }
-        .background::before{
+        
+        .background::before {
             content: '';
-            background-size:auto;
-            background-image:url("gugong3.jpg");
+            background-size: auto;
+            background-image: url("gugong3.jpg");
             background-position: 50% 50%;
             position: absolute;
             top: 0;
@@ -36,26 +40,28 @@
             right: 0;
             z-index: -99;
         }
-        h1{
+        
+        h1 {
             position: absolute;
             text-align: center;
             width: 100%;
             letter-spacing: 10px;
             color: #fff;
         }
-        h2{
-            position:absolute;
-            letter-spacing:2px;
-            top:100vh;
+        
+        h3 {
+            position: absolute;
+            letter-spacing: 2px;
+            top: 100vh;
             width: 60%;
             color: #fff;
             left: 50%;
-            transform:translateX(-50%);
+            transform: translateX(-50%);
             padding: 30px;
             background-color: rgba(0, 0, 0, .3);
-
         }
-        .hyperlink{
+        
+        .hyperlink {
             position: absolute;
             text-align: center;
             width: 93%;
@@ -63,38 +69,40 @@
         }
     </style>
 </head>
+
 <body>
-<div id="layout">
-    <h1>Forbidden City</h1>
-    <div class="background"><span>故宫</span></div>
-    <img >
-    <h2>The Forbidden City is the imperial palace of the two dynasties in Ming and Qing Dynasties, located in the center of Beijing's central axis. It is the cream of ancient Chinese palace architecture.
-        <br>
-        <br>
-        The Forbidden City is centered on three main halls, covering an area of 720,000 square meters, with a construction area of about 150,000 square meters. It has more than 70 palaces and more than 9,000 houses. It is one of the largest and most complete ancient wooden structures in the world.
-        <br>
-        <br>
-        It is a rectangular city pool, 961 meters long north and south, 753 meters wide East and west, surrounded by a wall 10 meters high, and 52 meters wide moat outside. The buildings in the Forbidden City are divided into two parts: the Outer Dynasty and the Inner Court.
-        <br>
-        <br>
-        The center of the outer dynasty is the Hall of Supreme Harmony, the Hall of Zhonghe, the Hall of Baohe, collectively referred to as the three main hall, is the place where the state held the great ceremony. 
-        <br>
-        <br>
-        The center of Inner Court is where the emperor and empress lived.
-        <br>
-        <br>
-        <a href="cspfinalP2.html" class="hyperlink">Link to Tour Guide</a>
-        <br>
-        <br>
-    </h2>
-</div>
+    <div id="layout">
+        <h1>Forbidden City</h1>
+        <div class="background"><span>故宫</span></div>
+        <img>
+        <h3 id="paragraph">The Forbidden City is the imperial palace of the two dynasties in Ming and Qing Dynasties, located in the center of Beijing's central axis. It is the cream of ancient Chinese palace architecture.
+            <br>
+            <br> The Forbidden City is centered on three main halls, covering an area of 720,000 square meters, with a construction area of about 150,000 square meters. It has more than 70 palaces and more than 9,000 houses. It is one of the largest and
+            most complete ancient wooden structures in the world.
+            <br>
+            <br> It is a rectangular city pool, 961 meters long north and south, 753 meters wide East and west, surrounded by a wall 10 meters high, and 52 meters wide moat outside. The buildings in the Forbidden City are divided into two parts: the Outer
+            Dynasty and the Inner Court.
+            <br>
+            <br>
+            <a href="cspfinalP2.html" class="hyperlink">Link to Tour Guide</a>
+            <br>
+            <br>
+        </h3>
+    </div>
     <script>
         const background = document.querySelector(".background")
-
-        document.addEventListener('scroll',()=>{
-            const scrollY = window.scrollY*3
+        const P = document.getElementById('paragraph')
+        let width = document.body.clientWidth
+        document.addEventListener('scroll', () => {
+            const scrollY = window.scrollY * 3
             scrollY !== 0 ? background.style.backgroundPosition = `calc(50% + ${scrollY}px)calc(50% + ${scrollY}px)` : background.style.backgroundPosition = '';
+        })
+        document.addEventListener('mouseover', function() {
+            width = document.body.clientWidth
+            background.style.fontSize = width / (3.1) + 'px'
+            P.style.marginTop = background.style.fontSize / 100
         })
     </script>
 </body>
+
 </html>
